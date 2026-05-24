@@ -4,7 +4,7 @@
 
 Stop maintaining your resume and portfolio site in parallel. `resume.yaml` is the single source of truth — the same file emits a PDF resume **and** a multi-mode portfolio site (splash → terminal → editorial GUI). Update once; both stay in sync. Use `show_on_resume` to control which entries appear where.
 
-**Live Demo:** [subhayu99.github.io](https://subhayu99.github.io)
+**Live Demo:** [mishrayashi.github.io](https://mishrayashi.github.io)
 
 [![Stars](https://img.shields.io/github/stars/subhayu99/subhayu99.github.io?style=flat-square&logo=github&color=2ea043)](https://github.com/subhayu99/subhayu99.github.io/stargazers)
 [![Forks](https://img.shields.io/github/forks/subhayu99/subhayu99.github.io?style=flat-square&logo=github&color=2ea043)](https://github.com/subhayu99/subhayu99.github.io/network/members)
