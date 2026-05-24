@@ -3,39 +3,41 @@ cv:
   location: "Jaipur, India"
   email: "mishrayashi2208@gmail.com"
   phone: "tel:+919354048795"
-  tagline: "AI Data Engineer · Voice AI & LLM Systems"
+  website: "https://mishrayashi.github.io"
+  tagline: "AI & Data Engineer"
   social_networks:
     - network: "LinkedIn"
       username: "mishrayashi"
+    - network: "GitHub"
+      username: "mishrayashi" 
+
   sections:
     intro:
-      - "AI & Data Engineer with **4 years** of experience bridging large-scale data engineering with production AI systems — specifically real-time **Voice AI** and **LLM-integrated** pipelines. Specialized in Python (PySpark), SQL, Databricks, and cloud-native architectures (Azure/GCP/AWS), with deep focus on data quality, real-time analytics, and conversational AI."
-      - "Proven track record building **end-to-end real-time Voice AI pipelines** (Whisper STT + Deepgram + ElevenLabs) for live conversational interview systems, authoring **300+ automated data-quality rules** across high-volume **UAE government** pipelines on Microsoft Fabric + Azure Databricks, **cutting frontend SQL query latency by 30%+ to under 2 seconds**, and contributing to **distributed fine-tuning of large-scale multilingual LLMs**."
-      - "Delivered **onsite** with enterprise and government stakeholders in **Dubai and Abu Dhabi**, coordinating cross-functional teams across UAE/UK/India time zones to translate ministry-level requirements into production data systems — while continuously driving adoption of emerging Voice AI and LLM tooling into live client engagements."
-
+      - "AI & Data Engineer with **4 years** of experience bridging large-scale data engineering with production AI systems - Python (PySpark), SQL, Databricks, and cloud-native architectures across Azure/GCP/AWS, with focus on data quality and real-time pipelines."
+      - "Proven track record authoring **300+ data-quality rules** for **UAE government** pipelines on Microsoft Fabric + Azure Databricks, **fine-tuning multilingual LLMs** with parallel/batch training pipelines, **cutting SQL latency 30%+ to under 2 seconds**, and prototyping **real-time Voice AI** systems (Whisper + Deepgram + ElevenLabs) with full production architecture estimates."
+      - "Delivered **onsite** with enterprise and government stakeholders in **Dubai and Abu Dhabi**, translating ministry-level requirements into production data systems across UAE/UK/India time zones."
     technologies:
       - label: "AI & Voice / LLM Systems"
-        details: "Whisper STT, Deepgram, ElevenLabs, OpenAI APIs, Hugging Face, RAG, Conversational AI, Phoneme Synchronization, Voice Emotion Tuning, Prompt Engineering, Ray"
+        details: "Whisper STT, Deepgram, ElevenLabs, OpenAI APIs, Hugging Face, RAG, Conversational AI, Prompt Engineering, Ray"
       - label: "Data Engineering"
-        details: "PySpark, SQL, Databricks, BigQuery, Microsoft Fabric, Unity Catalog, dbt, Snowflake, Airflow, ETL/ELT, Star/Snowflake Schemas, Data Quality, Data Lineage, Medallion Architecture, Real-Time & Batch Processing"
+        details: "PySpark, SQL, Databricks, BigQuery, Microsoft Fabric, Unity Catalog, dbt, Snowflake, Airflow, ETL/ELT, Star/Snowflake Schemas, Data Quality, Medallion Architecture, Real-Time & Batch Processing"
       - label: "Backend, Cloud & Viz"
         details: "Python, FastAPI, REST APIs, PostgreSQL, MySQL, MongoDB, Azure (Databricks/ADF/ADLS Gen2/AzureML), GCP (BigQuery/Pub-Sub/Cloud Run/Functions), AWS (S3/Lambda/Glue), Terraform, Docker, CI/CD, ReactJS, Looker Studio, Power BI, Tableau, N8N, Make.com"
 
     experience:
       - company: "FiftyFive Technologies"
-        position: "Senior Data Engineer"
+        position: "Data Engineer"
         location: "Jaipur, RJ (Hybrid)"
-        start_date: "2022-08"
+        start_date: "2022-08"  
         end_date: "2026-05"
-        summary: "Delivered end-to-end data and AI platforms across enterprise and government clients in **UAE, UK, and India** — spanning government data governance, real-time Voice AI, IoT cold-chain monitoring, LLM infrastructure, and analytics. Owned scoping, architecture, and production delivery; led international **onsite** engagements in Dubai and Abu Dhabi; and drove org-wide adoption of emerging Voice AI / LLM tooling from R&D into live client work.\\ **Client Engagements:**"
+        summary: "Owned scoping, architecture, and production delivery for enterprise and government clients across UAE, UK, and India; led onsite engagements with ministry stakeholders.\\ **Client Engagements:**"
         highlights:
-          - "**ODA – UAE Aid (Govt. Data Governance · Onsite Abu Dhabi/Dubai)**: Took ownership of a government-grade data quality platform on **Microsoft Fabric + Azure Databricks** for the UAE's Official Development Assistance program — authoring **300+ automated validation rules** spanning schema, business-logic, and cross-system integrity checks for audit-grade pipelines. Designed the **logical/physical data model** and KPI framework that standardized reporting across ministry stakeholders, rolled out **Unity Catalog** for centralized lineage and access control, and partnered onsite with government teams in Abu Dhabi and Dubai to translate ministry requirements directly into production schemas."
-          - "**AI Interview Assistant (Real-Time Voice & NLP Pipeline)**: Architected an end-to-end real-time conversational AI loop combining **Whisper** (transcription), **Deepgram** (low-latency streaming STT), and **ElevenLabs** (TTS synthesis) for live human-AI interview sessions. Engineered **word-level timestamp alignment** and **phoneme-level synchronization** to eliminate audible artifacts during turn-taking, layered **emotion-conditioned voice tuning** for context-aware tonal response, and shipped a **ReactJS** UI driving live multi-turn interview flows."
-          - "**QxLab AI (LLM Infrastructure & Fine-Tuning)**: Designed the **job orchestration and monitoring layer** for production LLM workflows — handling dependency graphs, **data lineage tracking**, and graceful failure recovery across distributed training runs on Azure (Blob Storage, SQL, **Ray**). Contributed to **distributed fine-tuning and inference optimization of large-scale multilingual LLMs** on the Hugging Face stack, plus integration with OpenAI APIs for downstream serving."
-          - "**AGY Logistics (Real-Time Cold-Chain IoT · GCP)**: Built a production monitoring stack ingesting **Samsara** telematics and **Ditat** TMS feeds into **BigQuery**, organized as a **Bronze → Silver → Gold → Diamond medallion architecture** — with the Diamond layer driving automated transformations, alert dispatch, and data profiling. Exposed downstream APIs via **FastAPI** on **Cloud Run + Cloud Functions**, and wired automated **Slack alerting** on critical temperature thresholds across reefer fleets — orchestrating workflow glue via **N8N** and **Make.com**."
-          - "**Smart Cloud Kitchen (Query Perf + Analytics)**: Rewrote critical SQL queries and stored procedures across **PostgreSQL** and **BigQuery**, **cutting frontend query latency by 30%+ to under 2 seconds** for live operational dashboards. Built **FastAPI** services on **Cloud Run** and interactive **Looker Studio** dashboards surfacing weekly performance trends and per-store failure patterns for cloud-kitchen ops teams."
-          - "**TopGun (Edge ML · Acoustic Event Detection)**: Built a real-time **gunshot detection** system using **TensorFlow Lite** with adaptive signal-processing to disambiguate overlapping events in noisy multi-shooter environments. Stood up the supporting data plane on **AWS S3 + MongoDB** for telemetry ingestion, labeled-event storage, and downstream model retraining."
-
+          - "**AI Interview Assistant (Voice & NLP PoC)**: Built a proof-of-concept real-time conversational pipeline — **Whisper + Deepgram + ElevenLabs** — for a client exploring AI-driven interviews. Researched the production architecture end-to-end, sized the engineering estimate, and presented the build plan to the client."
+          - "**AGY Logistics (Cold-Chain IoT · GCP)**: Owned the alerting and workflow automation layer — **automated Slack notifications** on critical reefer-temperature thresholds, orchestrated via **N8N + Make.com**. Supported the broader **Bronze→Diamond medallion** architecture on GCP with data quality checks and end-to-end testing."
+          - "**QxLab AI (LLM Fine-Tuning Research)**: Fine-tuned multiple large language models on the Hugging Face stack for production inference. Built and optimized **parallel and batch training pipelines** on distributed Azure (Ray) infrastructure for multilingual LLM workloads."- "**ODA – UAE Aid (with Artefact · Abu Dhabi/Dubai · Onsite)**: Stood up the data quality platform for the UAE Official Development Assistance program — authored **300+ validation rules** across schema, business-logic, and cross-system integrity on **Microsoft Fabric + Azure Databricks** for audit-grade ministry pipelines. Designed the logical/physical data model and KPI framework that standardized cross-ministry reporting, and rolled out **Unity Catalog** for centralized lineage and access control."
+          - "**Smart Cloud Kitchen (Query Perf)**: Rewrote critical SQL queries and stored procedures across PostgreSQL + BigQuery — **cut frontend query latency 30%+ to under 2 seconds** for live ops dashboards. Built FastAPI services on Cloud Run and Looker Studio dashboards surfacing weekly trends and per-store failure patterns."
+          - "**ZipApply (Job Platform Backend)**: Designed the backend data architecture for candidate-recruiter matching using a **life-quality scoring** signal with integrated email workflows. Built **HPCC ECL** ETL pipelines (Roxie real-time queries, cron-based scheduling) and **OpenAI-powered tools for resume enhancement and cover-letter generation**."
+  
     education:
       - institution: "GLA University"
         location: "Mathura, UP"
@@ -44,8 +46,57 @@ cv:
         start_date: "2019-08"
         end_date: "2023-06"
         highlights:
-          - "**GPA:** 81.9%"
+          - "**Aggregate:** 81.9%"
 
+    professional_projects:
+      - name: "ODA – UAE Aid · Government Data Governance (with Artefact)"
+        date: "2025-11"  
+        show_on_resume: false
+        highlights:
+          - "Took ownership of a government-grade data quality platform on Microsoft Fabric + Azure Databricks for the UAE's Official Development Assistance program — authoring 300+ automated validation rules spanning schema, business-logic, and cross-system integrity checks for audit-grade pipelines."
+          - "Designed the logical/physical data model and KPI framework that standardized reporting across ministry stakeholders."
+          - "Rolled out Unity Catalog for centralized lineage and access control."
+          - "Partnered onsite with government teams in Abu Dhabi and Dubai to translate ministry requirements directly into production schemas."
+
+      - name: "AI Interview Assistant · Real-Time Voice & NLP Pipeline"
+        date: "2026-04"
+        show_on_resume: false
+        highlights:
+          - "Architected an end-to-end real-time conversational AI loop combining Whisper (transcription), Deepgram (low-latency streaming STT), and ElevenLabs (TTS synthesis) for live human-AI interview sessions."
+          - "Engineered word-level timestamp alignment and phoneme-level synchronization to eliminate audible artifacts during turn-taking."
+          - "Layered emotion-conditioned voice tuning for context-aware tonal response."
+          - "Shipped a ReactJS UI driving live multi-turn interview flows."
+
+      - name: "QxLab AI · LLM Infrastructure & Fine-Tuning"
+        date: "2023-12"
+        show_on_resume: false
+        highlights:
+          - "Designed the job orchestration and monitoring layer for production LLM workflows — handling dependency graphs, data lineage tracking, and graceful failure recovery across distributed training runs on Azure (Blob Storage, SQL, Ray)."
+          - "Contributed to distributed fine-tuning and inference optimization of large-scale multilingual LLMs on the Hugging Face stack, plus integration with OpenAI APIs for downstream serving."
+
+      - name: "AGY Logistics · Real-Time Cold-Chain IoT (GCP)"
+        date: "2025-04"
+        show_on_resume: false
+        highlights:
+          - "Built a production monitoring stack ingesting Samsara telematics and Ditat TMS feeds into BigQuery, organized as a Bronze → Silver → Gold → Diamond medallion architecture — with the Diamond layer driving automated transformations, alert dispatch, and data profiling."
+          - "Exposed downstream APIs via FastAPI on Cloud Run + Cloud Functions."
+          - "Wired automated Slack alerting on critical temperature thresholds across reefer fleets, orchestrating workflow glue via N8N and Make.com."
+
+      - name: "LoopKitchen"
+        date: "2022-10"
+        show_on_resume: false
+        highlights:
+          - "Rewrote critical SQL queries and stored procedures across PostgreSQL and BigQuery, cutting frontend query latency by 30%+ to under 2 seconds for live operational dashboards."
+          - "Built FastAPI services on Cloud Run and interactive Looker Studio dashboards surfacing weekly performance trends and per-store failure patterns for cloud-kitchen ops teams."
+
+      - name: "ZipApply · Job Platform Backend"
+        date: "2022-12"
+        show_on_resume: false
+        highlights:
+          - "Designed the backend data architecture for candidate-recruiter matching using a life-quality scoring signal with integrated email workflows."
+          - "Built ETL pipelines on HPCC ECL with automated scheduling via cron jobs and Roxie real-time query services."
+          - "Built OpenAI-powered tools for resume enhancement and cover-letter generation as part of the candidate-facing layer."
+          
 design:
   theme: engineeringresumes
   page:
