@@ -102,10 +102,10 @@ design:
   theme: engineeringresumes
   page:
     size: a4
-    top_margin: 1.05cm
-    bottom_margin: 1.05cm
-    left_margin: 1.05cm
-    right_margin: 1.05cm
+    top_margin: 1.1cm
+    bottom_margin: 1.1cm
+    left_margin: 1.1cm
+    right_margin: 1.1cm
     show_page_numbering: false
     show_last_updated_date: false
   colors:
@@ -117,19 +117,19 @@ design:
     last_updated_date_and_page_numbering: "grey"
   text:
     font_family: Inter
-    font_size: 9.6pt
+    font_size: 10pt
     alignment: justified
     date_and_location_column_alignment: right
     leading: "0.65em"
   header:
     name_font_family: Inter
-    name_font_size: 16pt
+    name_font_size: 18pt
     name_bold: true
     small_caps_for_name: false
     photo_width: 3.5cm
     vertical_space_between_name_and_connections: 0.4cm
     vertical_space_between_connections_and_first_section: 0.4cm
-    horizontal_space_between_connections: 0.25cm
+    horizontal_space_between_connections: 0.27cm
     connections_font_family: Inter
     separator_between_connections: '|'
     use_icons_for_connections: false
@@ -138,7 +138,7 @@ design:
   section_titles:
     type: with-full-line
     font_family: Inter
-    font_size: 1.3em
+    font_size: 1.5em
     bold: true
     small_caps: true
     vertical_space_above: 0.4cm
