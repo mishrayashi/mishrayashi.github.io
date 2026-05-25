@@ -117,7 +117,7 @@ design:
     last_updated_date_and_page_numbering: "grey"
   text:
     font_family: Inter
-    font_size: 11pt
+    font_size: 10.5pt
     alignment: justified
     date_and_location_column_alignment: right
     leading: "0.65em"
