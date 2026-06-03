@@ -1,0 +1,19 @@
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃            yashiOS v1.0             ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+  [ AI & LLM ]   [ Data Eng ]   [ Voice AI ]
+        \           |           /
+              [ Python + Cloud ]
+        /           |           \
+  [ APIs ]    [ DataQuality ]   [ DevOps ]
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃        BUILT BY A REAL HUMAN        ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+ Yashi Mishra
+ AI & Data Engineer
+ Portfolio: mishrayashi.github.io
+ GitHub: [mishrayashi](https://github.com/mishrayashi)
+ Email: mishrayashi2208@gmail.com

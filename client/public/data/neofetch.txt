@@ -1,0 +1,28 @@
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                                         Welcome to yashiOS v1.0                                         ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+  ┌───────────────────────────────┐   ┌───────────────────────────────┐   ┌───────────────────────────────┐
+  │       Data Engineering        │   │       AI & LLM Systems        │   │           Voice AI            │
+  │  PySpark - Databricks - dbt   │   │  OpenAI - HuggingFace - RAG   │   │      Whisper - Deepgram       │
+  │ Fabric - Unity Catalog - ETL  │   │ Fine-tune - Prompt Eng - Ray  │   │  ElevenLabs - Real-Time STT   │
+  └───────────────────────────────┘   └───────────────────────────────┘   └───────────────────────────────┘
+
+  ┌───────────────────────────────┐   ┌───────────────────────────────┐   ┌───────────────────────────────┐
+  │        Backend & APIs         │   │      [ Python + Cloud ]       │   │         DevOps & IaC          │
+  │    FastAPI - REST - Python    │   │       Azure - GCP - AWS       │   │   Docker - Terraform - CICD   │
+  │  PostgreSQL - MySQL - Mongo   │   │         (Interop Hub)         │   │   ADF - Cloud Run - Lambda    │
+  └───────────────────────────────┘   └───────────────────────────────┘   └───────────────────────────────┘
+
+  ┌───────────────────────────────┐   ┌───────────────────────────────┐   ┌───────────────────────────────┐
+  │         Data Quality          │   │         Orchestration         │   │           Data Viz            │
+  │     300+ Validation Rules     │   │   Airflow - N8N - Make.com    │   │  Power BI - Looker - Tableau  │
+  │  Medallion - Lineage - Audit  │   │  Batch & Real-Time Pipelines  │   │    Streamlit - Dashboards     │
+  └───────────────────────────────┘   └───────────────────────────────┘   └───────────────────────────────┘
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                                          BUILT BY A REAL HUMAN                                          ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+ Yashi Mishra - AI & Data Engineer | Voice AI & LLM Systems
+ Portfolio: mishrayashi.github.io | GitHub: [mishrayashi](https://github.com/mishrayashi) | Email: mishrayashi2208@gmail.com

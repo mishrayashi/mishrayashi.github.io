@@ -4,35 +4,35 @@
 
 :root {
   --background: hsl(0, 0%, 0%);
-  --foreground: hsl(120, 100%, 50%);
-  --muted: hsl(120, 100%, 10%);
-  --muted-foreground: hsl(120, 50%, 70%);
+  --foreground: hsl(167, 100%, 50%);
+  --muted: hsl(167, 100%, 10%);
+  --muted-foreground: hsl(167, 50%, 70%);
   --popover: hsl(0, 0%, 0%);
-  --popover-foreground: hsl(120, 100%, 50%);
+  --popover-foreground: hsl(167, 100%, 50%);
   --card: hsl(0, 0%, 0%);
-  --card-foreground: hsl(120, 100%, 50%);
-  --border: hsl(120, 100%, 20%);
-  --input: hsl(120, 100%, 20%);
-  --primary: hsl(120, 100%, 50%);
+  --card-foreground: hsl(167, 100%, 50%);
+  --border: hsl(167, 100%, 20%);
+  --input: hsl(167, 100%, 20%);
+  --primary: hsl(167, 100%, 50%);
   --primary-foreground: hsl(0, 0%, 0%);
-  --secondary: hsl(120, 100%, 10%);
+  --secondary: hsl(167, 100%, 10%);
   --secondary-foreground: hsl(0, 0%, 100%);
-  --accent: hsl(120, 100%, 20%);
+  --accent: hsl(167, 100%, 20%);
   --accent-foreground: hsl(0, 0%, 100%);
   --destructive: hsl(0, 84.2%, 60.2%);
   --destructive-foreground: hsl(60, 9.1%, 97.8%);
-  --ring: hsl(120, 100%, 50%);
+  --ring: hsl(167, 100%, 50%);
   --radius: 0.5rem;
   
-  --terminal-green: hsl(120, 100%, 50%);
-  --terminal-bright-green: hsl(120, 100%, 60%);
+  --terminal-green: hsl(167, 100%, 50%);
+  --terminal-bright-green: hsl(167, 100%, 60%);
   --terminal-black: hsl(0, 0%, 0%);
   --terminal-white: hsl(0, 0%, 100%);
-  --glow-color-rgb: 0, 255, 0;
+  --glow-color-rgb: 0, 230, 180;
 
   /* TUI semantic tokens — theme-following. See applyColorTheme(). */
-  --tui-accent-dim: hsl(120, 80%, 42%);   /* darker-hue label color; follows theme */
-  --tui-muted: hsl(120, 12%, 60%);        /* very low-sat gray + whisper of hue */
+  --tui-accent-dim: hsl(167, 80%, 42%);   /* darker-hue label color; follows theme */
+  --tui-muted: hsl(167, 12%, 60%);        /* very low-sat gray + whisper of hue */
   --tui-error: hsl(0, 100%, 60%);         /* errors are universal red, never themed */
   --tui-warn: hsl(45, 100%, 55%);         /* warnings are universal amber */
 
@@ -47,10 +47,10 @@
   --gui-border: rgba(255, 255, 255, 0.08);
   --gui-text: #e4e4e7;
   --gui-text-muted: #a1a1aa;
-  --gui-accent: #00ff00;
-  --gui-accent-hover: #00c800;
-  --gui-accent-rgb: 0, 255, 0;
-  --gui-accent-ch: 0 255 0;
+  --gui-accent: #00e6b4;
+  --gui-accent-hover: #00be96;
+  --gui-accent-rgb: 0, 230, 180;
+  --gui-accent-ch: 0 230 180;
 }
 
 /* Hide page scrollbar — amber dot serves as progress indicator */
@@ -73,24 +73,24 @@ html {
 
 .dark {
   --background: hsl(0, 0%, 0%);
-  --foreground: hsl(120, 100%, 50%);
-  --muted: hsl(120, 100%, 10%);
-  --muted-foreground: hsl(120, 50%, 70%);
+  --foreground: hsl(167, 100%, 50%);
+  --muted: hsl(167, 100%, 10%);
+  --muted-foreground: hsl(167, 50%, 70%);
   --popover: hsl(0, 0%, 0%);
-  --popover-foreground: hsl(120, 100%, 50%);
+  --popover-foreground: hsl(167, 100%, 50%);
   --card: hsl(0, 0%, 0%);
-  --card-foreground: hsl(120, 100%, 50%);
-  --border: hsl(120, 100%, 20%);
-  --input: hsl(120, 100%, 20%);
-  --primary: hsl(120, 100%, 50%);
+  --card-foreground: hsl(167, 100%, 50%);
+  --border: hsl(167, 100%, 20%);
+  --input: hsl(167, 100%, 20%);
+  --primary: hsl(167, 100%, 50%);
   --primary-foreground: hsl(0, 0%, 0%);
-  --secondary: hsl(120, 100%, 10%);
+  --secondary: hsl(167, 100%, 10%);
   --secondary-foreground: hsl(0, 0%, 100%);
-  --accent: hsl(120, 100%, 20%);
+  --accent: hsl(167, 100%, 20%);
   --accent-foreground: hsl(0, 0%, 100%);
   --destructive: hsl(0, 62.8%, 30.6%);
   --destructive-foreground: hsl(0, 0%, 98%);
-  --ring: hsl(120, 100%, 50%);
+  --ring: hsl(167, 100%, 50%);
 }
 
 @layer base {

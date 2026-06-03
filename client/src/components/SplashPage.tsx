@@ -188,7 +188,7 @@ export default function SplashPage() {
       >
         {hovered === 'terminal' && (
           <div className="w-full h-full flex items-center justify-center">
-            <pre className="text-green-500 font-mono text-[10px] leading-tight opacity-60 whitespace-pre">
+            <pre className="text-gui-accent font-mono text-[10px] leading-tight opacity-60 whitespace-pre">
 {`┌──────────────────────────────────────┐
 │  visitor@portfolio:~$ help           │
 │                                      │
@@ -250,13 +250,13 @@ export default function SplashPage() {
 
       {/* Choose your interface prompt */}
       <motion.p
-        className="font-mono text-green-500 text-sm sm:text-base mb-8"
+        className="font-mono text-gui-accent text-sm sm:text-base mb-8"
         initial={{ opacity: 0 }}
         animate={{ opacity: nameReady ? 1 : 0 }}
         transition={{ duration: 0.4, delay: 0.3 }}
       >
-        <span className="text-green-600">$</span> Choose your interface...
-        <span className="inline-block w-2 h-4 bg-green-500 ml-1 animate-pulse" />
+        <span className="text-gui-accent/70">$</span> Choose your interface...
+        <span className="inline-block w-2 h-4 bg-gui-accent ml-1 animate-pulse" />
       </motion.p>
 
       {/* Toggle — TUI and GUI, equal size */}
@@ -272,8 +272,8 @@ export default function SplashPage() {
           onMouseLeave={() => setHovered(null)}
           className={`px-8 sm:px-10 py-3 text-sm sm:text-base font-mono tracking-wider transition-all duration-300 ${
             selected === 'terminal'
-              ? 'bg-green-500 text-black shadow-[0_0_20px_rgba(34,197,94,0.4)]'
-              : 'text-zinc-400 hover:text-green-400 hover:bg-zinc-900'
+              ? 'bg-gui-accent text-black shadow-[0_0_20px_rgba(var(--gui-accent-rgb),0.4)]'
+              : 'text-zinc-400 hover:text-gui-accent hover:bg-zinc-900'
           }`}
         >
           TUI

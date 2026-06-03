@@ -21,6 +21,7 @@ export interface ColorTheme {
 }
 
 export const colorThemes: ColorTheme[] = [
+  { key: 'aurora',  name: 'Aurora Teal',      accentRgb: [0, 230, 180],   accentHoverRgb: [0, 190, 150] },
   { key: 'matrix',  name: 'Matrix Green',     accentRgb: [0, 255, 0],     accentHoverRgb: [0, 200, 0] },
   { key: 'blue',    name: 'Cyberpunk Blue',   accentRgb: [0, 191, 255],   accentHoverRgb: [0, 150, 200] },
   { key: 'cyan',    name: 'Phosphor Cyan',    accentRgb: [0, 255, 255],   accentHoverRgb: [0, 200, 200] },
@@ -123,10 +124,10 @@ export function cycleTheme(): ColorTheme {
 
 export const guiTheme = {
   /** Core accent color as [R, G, B] — everything else derives from this */
-  accentRgb: [0, 255, 0] as const,
+  accentRgb: [0, 230, 180] as const,
 
   /** Darker accent for hover states as [R, G, B] */
-  accentHoverRgb: [0, 200, 0] as const,
+  accentHoverRgb: [0, 190, 150] as const,
 
   /** Background and surface */
   bg: '#000000',
