@@ -153,7 +153,7 @@ If you encounter issues:
 
 1. Check the [Troubleshooting Guide](./TROUBLESHOOTING.md)
 2. Review the Actions logs in your repository (Settings → Actions)
-3. Open an issue on the [template repository](https://github.com/subhayu99/subhayu99.github.io/issues)
+3. Open an issue on the [template repository](https://github.com/mishrayashi/mishrayashi.github.io/issues)
 
 ---
 

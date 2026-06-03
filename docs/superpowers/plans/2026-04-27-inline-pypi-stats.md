@@ -16,7 +16,7 @@
 
 ```bash
 # Confirm we're on the right branch and resume.yaml is hydrated
-git status                                # On branch subhayu99/inline-pypi-stats
+git status                                # On branch mishrayashi/inline-pypi-stats
 ls -la resume.yaml                        # Should exist (gitignored)
 
 # If resume.yaml is missing, hydrate it:

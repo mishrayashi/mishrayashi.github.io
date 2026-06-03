@@ -6,7 +6,7 @@
  *   - Falls back to template.config.yaml.example (template defaults)
  *   - Auto-derives forker-specific URLs from GITHUB_REPOSITORY / git remote
  *
- * The upstream template repo (subhayu99/subhayu99.github.io) stays a constant
+ * The upstream template repo (mishrayashi/mishrayashi.github.io) stays a constant
  * — that's the link every fork keeps back to the upstream regardless of who
  * deployed it. Forker-specific URLs (repoUrl, siteUrl) come from the env.
  */
@@ -25,7 +25,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const ROOT = join(__dirname, '..', '..');
 
-export const UPSTREAM_TEMPLATE_REPO = 'subhayu99/subhayu99.github.io';
+export const UPSTREAM_TEMPLATE_REPO = 'mishrayashi/mishrayashi.github.io';
 export const UPSTREAM_TEMPLATE_URL = `https://github.com/${UPSTREAM_TEMPLATE_REPO}`;
 
 function readVersion() {

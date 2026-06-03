@@ -123,4 +123,4 @@ scripts/                      # All build-time generation (resume, config, stats
 - rendercv has strict field validation. If you add a custom field to resume.yaml, also add it to the stripping logic in `generate-resume.js` or rendercv will reject the input.
 - The `pypi-inline.config.yaml` file maps PyPI package names to regex replacement rules in resume.yaml. If you add a new package with `pypi_package:` field, add a corresponding rule there for inline count updates.
 - Terminal commands are registered in `client/src/hooks/useTerminal.tsx`. Adding a new command means adding it to the command map there.
-- The deploy workflow skips deployment on `main` for the upstream repo (subhayu99/subhayu99.github.io). Forkers deploy from their default branch.
+- The deploy workflow (`.github/workflows/deploy.yaml`) builds + deploys the site on every push to `main`; pull requests build for validation but don't deploy.

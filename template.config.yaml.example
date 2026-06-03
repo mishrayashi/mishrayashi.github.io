@@ -17,8 +17,8 @@ site:
   repositoryUrl: "https://github.com/yourusername/yourusername.github.io"
 
   # Template repository (for 'replicate' command)
-  templateRepo: "https://github.com/subhayu99/subhayu99.github.io"
-  templateDocs: "https://github.com/subhayu99/subhayu99.github.io/tree/main/docs"
+  templateRepo: "https://github.com/mishrayashi/mishrayashi.github.io"
+  templateDocs: "https://github.com/mishrayashi/mishrayashi.github.io/tree/main/docs"
 
 # Progressive Web App (PWA) Settings
 # -----------------------------------
@@ -162,10 +162,10 @@ advanced:
 # -------------------
 # These are shown in the 'replicate' command
 documentation:
-  easyMode: "https://github.com/subhayu99/subhayu99.github.io#-easy-mode---get-started-in-10-minutes"
-  advancedGuide: "https://github.com/subhayu99/subhayu99.github.io/blob/main/docs/ADVANCED.md"
+  easyMode: "https://github.com/mishrayashi/mishrayashi.github.io#-easy-mode---get-started-in-10-minutes"
+  advancedGuide: "https://github.com/mishrayashi/mishrayashi.github.io/blob/main/docs/ADVANCED.md"
   renderCvGuide: "https://app.rendercv.com"
-  troubleshooting: "https://github.com/subhayu99/subhayu99.github.io/blob/main/docs/TROUBLESHOOTING.md"
+  troubleshooting: "https://github.com/mishrayashi/mishrayashi.github.io/blob/main/docs/TROUBLESHOOTING.md"
 
 # Branding (Optional)
 # -------------------

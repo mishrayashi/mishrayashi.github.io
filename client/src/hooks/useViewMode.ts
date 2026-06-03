@@ -30,10 +30,9 @@ interface ViewModeContextValue {
 
 const ViewModeContext = createContext<ViewModeContextValue | null>(null);
 
-/** Hashes that should land the user inside GUI (games + replicate sheet live there). */
+/** Hashes that should land the user inside GUI (games live there). */
 const GAME_HASHES = new Set([
   'snake', 'racer', 'reflex', 'help',
-  'replicate', 'fork', 'clone',
 ]);
 
 function hashToMode(hash: string): ViewMode | null {

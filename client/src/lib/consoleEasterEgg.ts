@@ -12,17 +12,17 @@
  */
 
 const ASCII = String.raw`
-   _____ _  __ ____
-  / ____| |/ /| __ )
-  \___ \| ' / |  _ \
-  ____) | . \ | |_) |
- |_____/|_|\_\|____/
+ __   __ __  __
+ \ \ / / |  \/  |
+  \ V /  | |\/| |
+   | |   | |  | |
+   |_|   |_|  |_|
 `;
 
 const ANNIVERSARIES: Record<string, string> = {
   // MM-DD (month is 1-indexed here for readability)
-  '12-14': "ps: today's my birthday 🎂",
-  '1-3': 'ps: i got my first job on this day!',
+  // Add your own personal milestone dates here, e.g.:
+  // '12-14': "ps: today's my birthday 🎂",
 };
 
 function pickGreeting(hour: number): string {
@@ -51,5 +51,5 @@ export function runConsoleEasterEgg() {
   if (anniversary) console.log(`%c// ${anniversary}`, BRIGHT);
   console.log('%c// five things hide on this page. start with "help".', MUTED);
   console.log('%c// or try: snake · reflex · racer · T · help', MUTED);
-  console.log('%c// built by subhayu → https://github.com/subhayu99', MUTED);
+  console.log('%c// built by yashi → https://github.com/mishrayashi', MUTED);
 }

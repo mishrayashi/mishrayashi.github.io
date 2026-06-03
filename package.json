@@ -1,17 +1,17 @@
 {
-  "name": "subhayu99.github.io",
+  "name": "mishrayashi.github.io",
   "version": "1.0.0",
   "description": "One resume.yaml emits a PDF resume + a multi-mode portfolio site (splash → terminal → editorial GUI). Always in sync, zero-code GitHub Pages deploy.",
   "type": "module",
   "license": "MIT",
-  "author": "Subhayu Kumar Bala <balasubhayu99@gmail.com>",
-  "homepage": "https://github.com/subhayu99/subhayu99.github.io#readme",
+  "author": "Yashi Mishra <mishrayashi2208@gmail.com>",
+  "homepage": "https://github.com/mishrayashi/mishrayashi.github.io#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/subhayu99/subhayu99.github.io.git"
+    "url": "git+https://github.com/mishrayashi/mishrayashi.github.io.git"
   },
   "bugs": {
-    "url": "https://github.com/subhayu99/subhayu99.github.io/issues"
+    "url": "https://github.com/mishrayashi/mishrayashi.github.io/issues"
   },
   "keywords": [
     "portfolio",
@@ -119,6 +119,7 @@
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^4.3.2",
     "autoprefixer": "^10.4.20",
+    "playwright-core": "^1.60.0",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.17",
     "typescript": "5.6.3",

@@ -271,7 +271,7 @@ npm run build
 If none of these solutions work:
 
 1. **Check workflow logs**: Go to Actions tab, click on failed workflow, read logs
-2. **Search existing issues**: [GitHub Issues](https://github.com/subhayu99/subhayu99.github.io/issues)
+2. **Search existing issues**: [GitHub Issues](https://github.com/mishrayashi/mishrayashi.github.io/issues)
 3. **Open a new issue**: Include:
    - Error message (full text)
    - Workflow logs (if applicable)

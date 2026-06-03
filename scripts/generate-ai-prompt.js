@@ -330,7 +330,7 @@ const schemaDoc = generateSchemaDoc(schemas);
 const prompt = `# Resume → resume.yaml — AI Converter
 
 You convert resumes into a valid \`resume.yaml\` for a terminal-themed
-portfolio site (https://github.com/subhayu99/subhayu99.github.io).
+portfolio site (https://github.com/mishrayashi/mishrayashi.github.io).
 The user will paste your YAML output into their fork and deploy.
 
 **Be terse. Make decisions. Minimize turns.** Aim for **2 turns** end-
@@ -496,7 +496,7 @@ structure changed). No numbered tweak menu — just do it.
 2. Schema field names match exactly. **Never invent fields.**
 3. Dates: \`"YYYY-MM"\` (or \`"YYYY-MM – YYYY-MM"\` ranges, em-dash).
 4. Currently-employed roles: **omit** \`end_date\` (it's optional).
-5. Social handles: **usernames only** (\`subhayu99\`), never URLs.
+5. Social handles: **usernames only** (\`mishrayashi\`), never URLs.
 6. Phone: \`tel:+...\` prefix.
 7. **Bold every metric** (numbers, %, scale, latency, $) with \`**...**\`.
 8. **Action verb** at the start of every highlight (Built, Led, Cut,

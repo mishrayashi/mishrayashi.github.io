@@ -32,8 +32,8 @@ export default function ProjectCard({ project, index, stats }: ProjectCardProps)
   const pypiUrl = extractUrl(highlights, 'PyPI');
   const docsUrl = extractUrl(highlights, 'documentation');
   // `live_url` is a custom field on a project — surfaces a "live →" CTA in
-  // the actions row. Internal anchors (e.g. "#fork" → ReplicateSheet) stay
-  // same-tab; everything else opens in a new tab.
+  // the actions row. Internal anchors (e.g. "#projects") stay same-tab;
+  // everything else opens in a new tab.
   const liveUrl = (project as { live_url?: unknown }).live_url;
   const liveHref = typeof liveUrl === 'string' && liveUrl.length > 0 ? liveUrl : null;
   const liveIsInternal = liveHref?.startsWith('#') ?? false;

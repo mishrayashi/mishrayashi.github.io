@@ -12,7 +12,7 @@ body:
         - Check the [README](../README.md)
         - Read the [Deployment Guide](../docs/DEPLOYMENT.md)
         - Review the [Troubleshooting Guide](../docs/TROUBLESHOOTING.md)
-        - Search [existing issues](https://github.com/subhayu99/subhayu99.github.io/issues)
+        - Search [existing issues](https://github.com/mishrayashi/mishrayashi.github.io/issues)
 
   - type: dropdown
     id: question-type

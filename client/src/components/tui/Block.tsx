@@ -50,7 +50,7 @@ interface BlockProps {
   /** Tight-body variant: no inner padding, for ASCII art / preformatted
       content that should hug the border. */
   dense?: boolean;
-  /** Optional hero variant — wider max-width for welcome / replicate
+  /** Optional hero variant — wider max-width for welcome and other views
       which hold more content than a typical command output. */
   wide?: boolean;
 }

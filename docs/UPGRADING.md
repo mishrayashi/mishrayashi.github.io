@@ -24,11 +24,11 @@ If you forked recently, the `upstream` remote should already exist. Verify:
 git remote -v
 ```
 
-If you don't see an `upstream` entry pointing at `subhayu99/subhayu99.github.io`,
+If you don't see an `upstream` entry pointing at `mishrayashi/mishrayashi.github.io`,
 add it:
 
 ```bash
-git remote add upstream https://github.com/subhayu99/subhayu99.github.io.git
+git remote add upstream https://github.com/mishrayashi/mishrayashi.github.io.git
 ```
 
 That's the only setup step.
@@ -113,7 +113,7 @@ template was demoted), you don't have an `upstream` remote. Add one
 retroactively:
 
 ```bash
-git remote add upstream https://github.com/subhayu99/subhayu99.github.io.git
+git remote add upstream https://github.com/mishrayashi/mishrayashi.github.io.git
 git fetch upstream main
 ```
 

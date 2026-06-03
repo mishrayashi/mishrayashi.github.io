@@ -5,7 +5,7 @@ How to maintain this repo across the two-branch model.
 ## 🌿 The two branches
 
 - **`main`** — clean template (no personal data). Forkers `Use this template`-equivalent.
-- **`personal`** — your portfolio (`main` + your `resume.yaml` and other personal files). Deploys to https://subhayu99.github.io.
+- **`personal`** — your portfolio (`main` + your `resume.yaml` and other personal files). Deploys to https://mishrayashi.github.io.
 
 ## 🔁 The flow (canonical: main, sync down to personal)
 
@@ -31,7 +31,7 @@ The previous flow (work on `personal`, hand-cherry-pick to `main` via `sync-X-to
 ```bash
 git checkout main
 git pull --ff-only origin main
-git checkout -b subhayu99/<short-description>
+git checkout -b mishrayashi/<short-description>
 
 # (optional) bring in your data so you can dev with real content:
 npm run hydrate
@@ -39,7 +39,7 @@ npm run hydrate
 npm run dev
 # … hack hack hack …
 git add <files> && git commit -m "feat: …"
-git push origin subhayu99/<short-description>
+git push origin mishrayashi/<short-description>
 gh pr create --base main
 ```
 
@@ -59,7 +59,7 @@ git push origin personal
 ### C. I need real data to test on a feature branch (not personal)
 
 ```bash
-git checkout subhayu99/<feature-branch>   # any non-personal branch
+git checkout mishrayashi/<feature-branch>   # any non-personal branch
 npm run hydrate                            # pulls resume.yaml + manifest + neofetch from personal
 npm run dev                                # site renders with YOUR data
 ```
@@ -87,7 +87,7 @@ git push origin personal
 **DON'T**
 - Commit personal data (resume.yaml, manifest.json, neofetch*.txt, etc.) to `main` — they're gitignored there for a reason.
 - Force-push to either branch.
-- Cherry-pick `personal → main` for engine work — use a branch off `main` instead. The legacy `subhayu99/sync-X-to-main` pattern is now obsolete.
+- Cherry-pick `personal → main` for engine work — use a branch off `main` instead. The legacy `mishrayashi/sync-X-to-main` pattern is now obsolete.
 
 ## 🛠 Useful commands
 

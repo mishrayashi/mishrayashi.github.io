@@ -6,7 +6,7 @@ Thank you for considering contributing to this project! We welcome contributions
 
 ### Reporting Bugs
 
-If you find a bug, please [open an issue](https://github.com/subhayu99/subhayu99.github.io/issues/new/choose) with:
+If you find a bug, please [open an issue](https://github.com/mishrayashi/mishrayashi.github.io/issues/new/choose) with:
 
 - A clear title and description
 - Steps to reproduce the bug
@@ -17,7 +17,7 @@ If you find a bug, please [open an issue](https://github.com/subhayu99/subhayu99
 
 ### Suggesting Features
 
-Have an idea for a new feature? [Open a feature request](https://github.com/subhayu99/subhayu99.github.io/issues/new/choose) with:
+Have an idea for a new feature? [Open a feature request](https://github.com/mishrayashi/mishrayashi.github.io/issues/new/choose) with:
 
 - A clear description of the feature
 - Why it would be useful
@@ -51,13 +51,13 @@ Ready to write code? Great! Here's how to get started.
 1. Fork the repository on GitHub
 2. Clone your fork:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/subhayu99.github.io.git
-   cd subhayu99.github.io
+   git clone https://github.com/YOUR_USERNAME/mishrayashi.github.io.git
+   cd mishrayashi.github.io
    ```
 
 3. Add the upstream remote:
    ```bash
-   git remote add upstream https://github.com/subhayu99/subhayu99.github.io.git
+   git remote add upstream https://github.com/mishrayashi/mishrayashi.github.io.git
    ```
 
 ### Install Dependencies
@@ -183,7 +183,7 @@ git commit -m "refactor: extract command logic into separate hooks"
    git push origin feature/your-feature-name
    ```
 
-2. Go to the [original repository](https://github.com/subhayu99/subhayu99.github.io)
+2. Go to the [original repository](https://github.com/mishrayashi/mishrayashi.github.io)
 3. Click "New Pull Request"
 4. Select your fork and branch
 5. Fill in the PR template with:
@@ -238,7 +238,7 @@ Looking for ideas? Here are some areas where we'd love contributions:
 Understanding the codebase:
 
 ```
-subhayu99.github.io/
+mishrayashi.github.io/
 ├── client/                    # Frontend React application
 │   ├── src/
 │   │   ├── components/       # React components
@@ -293,8 +293,8 @@ Instances of abusive behavior may be reported to the project maintainers. All co
 
 - Check the [README](./README.md)
 - Read the [documentation](./docs/)
-- Browse [existing issues](https://github.com/subhayu99/subhayu99.github.io/issues)
-- Start a [discussion](https://github.com/subhayu99/subhayu99.github.io/discussions)
+- Browse [existing issues](https://github.com/mishrayashi/mishrayashi.github.io/issues)
+- Start a [discussion](https://github.com/mishrayashi/mishrayashi.github.io/discussions)
 
 ## 📄 License
 

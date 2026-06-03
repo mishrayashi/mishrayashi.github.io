@@ -1,22 +1,12 @@
 # ====================================================================
 # Portfolio Template - Automated Deployment
 # ====================================================================
-# This workflow automatically builds and deploys your portfolio to
-# GitHub Pages when you push changes.
+# This workflow automatically builds and deploys the portfolio to
+# GitHub Pages on every push to 'main'.
 #
-# 🌟 FOR TEMPLATE USERS:
-#   - Triggers on push to 'main' branch (default)
-#   - Just push your resume.yaml changes and it auto-deploys!
+#   - Triggers on push to 'main' (deploys the live site)
+#   - Pull requests build for validation but do not deploy
 #   - No local installation of npm, Python, or RenderCV needed
-#
-# 🌿 FOR TEMPLATE OWNER (subhayu99):
-#   - Triggers on 'main' and 'personal' branches
-#   - Automatically skips deployment on main (template updates only)
-#   - Deploys only from 'personal' branch (actual portfolio)
-#
-# 📚 Documentation:
-#   - Branch Workflow: See BRANCH_WORKFLOW.md
-#   - Template Users: See README.md
 # ====================================================================
 
 name: Deploy Portfolio
@@ -46,8 +36,6 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    # Skip this job if running on template repo's main branch
-    if: github.repository != 'subhayu99/subhayu99.github.io' || github.ref != 'refs/heads/main'
 
     steps:
     - name: 📥 Checkout repository
@@ -158,8 +146,8 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
-    # Skip this job if running on template repo's main branch
-    if: github.repository != 'subhayu99/subhayu99.github.io' || github.ref != 'refs/heads/main'
+    # Deploy only on real pushes/dispatch — never on pull requests.
+    if: github.event_name != 'pull_request'
 
     steps:
     - name: 🌐 Deploy to GitHub Pages
@@ -171,5 +159,5 @@ jobs:
         echo "🎉 Your portfolio is now live!"
         echo "🔗 URL: ${{ steps.deployment.outputs.page_url }}"
         echo ""
-        echo "To update your portfolio, just push changes to the personal branch."
+        echo "To update your portfolio, just push changes to the main branch."
         echo "The site will automatically rebuild and redeploy!"

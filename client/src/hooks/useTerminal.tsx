@@ -11,13 +11,9 @@ import { CmdLink, ExtLink } from '../components/tui/TuiLink';
 import { UsageHint } from '../components/tui/UsageHint';
 import { ExploreMore } from '../components/tui/ExploreMore';
 import { CollapsibleGroup, type CollapsibleItemData } from '../components/tui/Collapsible';
-import { ReplicatePage } from '../components/tui/ReplicatePage';
-import { StatsPage } from '../components/tui/StatsPage';
 import { LabeledRow, CompactRow } from '../components/tui/LabeledRow';
 import { MarkdownBlock } from '../components/tui/MarkdownBlock';
-import { BrailleSparkline, formatCompact } from '../components/tui/BrailleSparkline';
 import type { TerminalLinkRegistry, TerminalLink } from '../components/tui/LinkRegistry';
-import { loadPyPIStats, type PyPIStatsData, type PyPIPackageStats } from '../lib/pypiStats';
 // Import specific date-fns functions for better tree-shaking
 import { parse } from 'date-fns/parse';
 
@@ -107,65 +103,6 @@ const formatDateForDisplay = (dateStr: string): string => {
     month: 'short' 
   });
 };
-
-/** Synthesise a demo PyPI stats payload so the `stats` command always
- *  has something to render when the real `pypi-stats.json` is missing
- *  (template clones, pre-deploy, offline dev). Values are obviously
- *  fake — the UI flags this with a "· demo data" tag. */
-function buildDemoPypi(): PyPIStatsData {
-  const today = new Date();
-  const weeklyFor = (baseDownloads: number, jitter: number, weeks = 16) =>
-    Array.from({ length: weeks }, (_, i) => {
-      const d = new Date(today);
-      d.setDate(d.getDate() - (weeks - i) * 7);
-      const phase = Math.sin((i / weeks) * Math.PI * 2.2);
-      const noise = (Math.random() - 0.5) * jitter;
-      const value = Math.max(0, Math.round(baseDownloads * (1 + 0.35 * phase) + noise));
-      return { date: d.toISOString().slice(0, 10), downloads: value };
-    });
-
-  const demoPackages: Record<string, PyPIPackageStats> = {
-    quickstart: {
-      name: 'quickstart',
-      total_all_time: 32100,
-      total_180d: 9200,
-      last_day: 220,
-      last_week: 1480,
-      last_month: 5400,
-      daily: [],
-      weekly: weeklyFor(1200, 600),
-    },
-    sqlstream: {
-      name: 'sqlstream',
-      total_all_time: 5200,
-      total_180d: 1800,
-      last_day: 42,
-      last_week: 290,
-      last_month: 980,
-      daily: [],
-      weekly: weeklyFor(260, 140),
-    },
-    'smart-commit': {
-      name: 'smart-commit',
-      total_all_time: 3400,
-      total_180d: 1100,
-      last_day: 18,
-      last_week: 160,
-      last_month: 520,
-      daily: [],
-      weekly: weeklyFor(140, 90),
-    },
-  };
-  const total = Object.values(demoPackages).reduce(
-    (s, p) => s + p.total_all_time,
-    0,
-  );
-  return {
-    fetched_at: today.toISOString(),
-    total_downloads: total,
-    packages: demoPackages,
-  };
-}
 
 function getProjectsNode(
   projectData: Array<Record<string, unknown>>,
@@ -338,13 +275,6 @@ async function getWelcomeNode(portfolioData: PortfolioData): Promise<ReactNode> 
           <CmdLink cmd="help">help</CmdLink>{' '}
           for all commands
         </div>
-        <div className="text-tui-muted/70">
-          like this portfolio? type{' '}
-          <CmdLink cmd="replicate" className="text-tui-muted">
-            replicate
-          </CmdLink>{' '}
-          to fork it in ~5 min
-        </div>
       </div>
     </div>
   );
@@ -433,9 +363,6 @@ const COMMAND_REGISTRY: CommandMetadata[] = [
   { name: 'search', description: 'Search through my portfolio content', category: 'tools', argsHint: '[term]' },
   { name: 'theme', description: 'Change terminal color theme', category: 'tools', argsHint: '[name]' },
   { name: 'gui', description: 'Switch to the GUI portfolio view', category: 'tools' },
-  { name: 'replicate', description: 'Create your own terminal portfolio', category: 'tools', aliases: ['clone', 'fork'] },
-  { name: 'showcase', description: "Forks deployed using this template", category: 'tools', aliases: ['forks', 'adopters'] },
-  { name: 'stats', description: 'Live PyPI download sparklines', category: 'tools' },
 
   // TERMINAL Commands (always available)
   { name: 'clear', description: 'Clear the terminal screen', category: 'terminal' },
@@ -545,7 +472,7 @@ export function useTerminal({ portfolioData, onSwitchToGUI, onTriggerMatrix, onD
 
   /** Commands that represent a "navigation" — they change the prompt
    *  context to `~/<cmd>`. Utility / lookup commands (ls, pwd, history,
-   *  theme, search, clear, gui, resume, help, whoami, neofetch, stats)
+   *  theme, search, clear, gui, resume, help, whoami, neofetch)
    *  don't move the user anywhere — they're print-and-return ops, not
    *  section views, and pinning them to `~/whoami` reads as a duplicate
    *  next to the command echo. `welcome` resets to `~/` since that's
@@ -553,7 +480,6 @@ export function useTerminal({ portfolioData, onSwitchToGUI, onTriggerMatrix, onD
   const DESTINATION_COMMANDS = new Set([
     'about', 'skills', 'experience', 'education', 'projects',
     'personal', 'publications', 'timeline', 'contact',
-    'replicate', 'clone', 'fork',
   ]);
 
   // Get available commands based on portfolio data
@@ -745,14 +671,6 @@ export function useTerminal({ portfolioData, onSwitchToGUI, onTriggerMatrix, onD
       addLine(uiText.messages.error.portfolioNotLoaded, 'text-terminal-red');
     }
   }, [portfolioData]);
-
-  const showReplicate = useCallback(() => {
-    addNode(<ReplicatePage />, 'w-full');
-  }, [addNode]);
-
-  const showShowcase = useCallback(() => {
-    addNode(<StatsPage />, 'w-full');
-  }, [addNode]);
 
   const showAbout = useCallback(() => {
     if (!portfolioData) {
@@ -2345,7 +2263,7 @@ export function useTerminal({ portfolioData, onSwitchToGUI, onTriggerMatrix, onD
       '/sys/kernel',
       '/dev/sda',
       '/root',
-      '/home/subhayu',
+      '/home/yashi',
     ];
     for (const p of protectedPaths) {
       beat(`rm: cannot remove '${p}': Permission denied`, 'text-tui-error');
@@ -2368,14 +2286,14 @@ export function useTerminal({ portfolioData, onSwitchToGUI, onTriggerMatrix, onD
     const condemned = [
       '/bin', '/etc', '/lib', '/lib64', '/opt', '/proc', '/root',
       '/sbin', '/sys', '/tmp', '/usr', '/var',
-      '/home/subhayu/.ssh',
-      '/home/subhayu/.bash_history',
-      '/home/subhayu/portfolio',
-      '/home/subhayu/portfolio/about',
-      '/home/subhayu/portfolio/experience',
-      '/home/subhayu/portfolio/projects',
-      '/home/subhayu/portfolio/skills',
-      '/home/subhayu',
+      '/home/yashi/.ssh',
+      '/home/yashi/.bash_history',
+      '/home/yashi/portfolio',
+      '/home/yashi/portfolio/about',
+      '/home/yashi/portfolio/experience',
+      '/home/yashi/portfolio/projects',
+      '/home/yashi/portfolio/skills',
+      '/home/yashi',
       '/',
     ];
     for (const p of condemned) {
@@ -2460,89 +2378,6 @@ export function useTerminal({ portfolioData, onSwitchToGUI, onTriggerMatrix, onD
     onTriggerMatrix({ persist: false, rainbow: true });
   }, [addLine, onTriggerMatrix]);
 
-  const showStats = useCallback(async () => {
-    // Fetch the live pypi-stats.json; same source as the GUI hero.
-    let pypi: PyPIStatsData | null = null;
-    try {
-      pypi = await loadPyPIStats();
-    } catch {
-      pypi = null;
-    }
-
-    // Fall back to a synthesized demo series if the stats file is
-    // missing (pre-deploy / template clones / first-run). The sparkline
-    // command should always demo SOMETHING — a useful feature shouldn't
-    // silently vanish when real data isn't around.
-    const isDemo = !pypi || Object.keys(pypi.packages).length === 0;
-    if (isDemo) {
-      pypi = buildDemoPypi();
-    }
-
-    const packages = Object.values(pypi!.packages);
-    // Sort by total downloads descending so the headline number leads.
-    packages.sort((a, b) => b.total_all_time - a.total_all_time);
-
-    const fetchedDate = pypi!.fetched_at
-      ? new Date(pypi!.fetched_at).toLocaleDateString('en-US', {
-          month: 'short',
-          day: 'numeric',
-          year: 'numeric',
-        })
-      : '';
-
-    addNode(
-      <Block title="// stats" wide>
-        <div className="mb-3 flex items-baseline gap-3 text-xs sm:text-sm font-mono">
-          <span className="text-tui-accent-dim">pypi</span>
-          <span className="text-terminal-bright-green text-lg tabular-nums">
-            {formatCompact(pypi!.total_downloads)}
-          </span>
-          <span className="text-tui-muted text-xs">total downloads</span>
-          {isDemo && (
-            <span className="text-tui-warn/80 text-[10px] uppercase tracking-wide">
-              · demo data
-            </span>
-          )}
-          {fetchedDate && (
-            <span className="text-tui-muted/70 text-[10px] ml-auto">
-              as of {fetchedDate}
-            </span>
-          )}
-        </div>
-
-        <div className="text-tui-accent-dim text-xs mb-2">// packages</div>
-        <div className="space-y-1.5 font-mono text-xs">
-          {packages.map((pkg) => {
-            const weekly = pkg.weekly.map((w) => w.downloads);
-            const last = weekly[weekly.length - 1] ?? pkg.last_week;
-            return (
-              <div
-                key={pkg.name}
-                className="grid grid-cols-12 items-baseline gap-2 border-l-2 border-tui-accent-dim/40 pl-3"
-              >
-                <span className="col-span-4 sm:col-span-3 text-terminal-bright-green truncate">
-                  {pkg.name}
-                </span>
-                <span className="col-span-5 sm:col-span-6">
-                  <BrailleSparkline data={weekly} width={28} />
-                </span>
-                <span className="col-span-3 sm:col-span-3 text-right text-tui-muted tabular-nums">
-                  {formatCompact(last)}/wk
-                </span>
-              </div>
-            );
-          })}
-        </div>
-
-        <div className="mt-4 pt-3 border-t border-tui-accent-dim/30 text-xs text-tui-muted">
-          sparklines show weekly downloads for the last{' '}
-          {packages[0]?.weekly.length ?? 0} weeks. data refreshed daily.
-        </div>
-      </Block>,
-      'w-full',
-    );
-  }, [addLine, addNode]);
-
   const showKonami = useCallback(() => {
     // Reuse the GUI's cycleTheme helper so the flash affects both views.
     const next = cycleTheme();
@@ -2623,21 +2458,19 @@ export function useTerminal({ portfolioData, onSwitchToGUI, onTriggerMatrix, onD
 
     // Navigation commands move the prompt dir; utility commands don't.
     if (DESTINATION_COMMANDS.has(cmd)) {
-      // Normalise aliases to their canonical dir (clone/fork → replicate).
-      const canonical = cmd === 'clone' || cmd === 'fork' ? 'replicate' : cmd;
       // Already viewing this section — re-running just duplicates the
       // identical block. Friendly nudge instead of redundant output.
       // No-arg only; with args (e.g. `theme blue`) the command is doing
       // real work, not just navigating.
-      if (currentDir === `~/${canonical}` && args.length === 1) {
+      if (currentDir === `~/${cmd}` && args.length === 1) {
         addLine(
-          `// already viewing ${canonical} — type 'clear' to reset, or scroll up`,
+          `// already viewing ${cmd} — type 'clear' to reset, or scroll up`,
           'text-tui-muted',
         );
         setLastExitCode(0);
         return;
       }
-      setCurrentDir(`~/${canonical}`);
+      setCurrentDir(`~/${cmd}`);
     } else if (cmd === 'welcome') {
       setCurrentDir('~');
     } else if (cmd === 'cat' && args[1] === 'resume.txt') {
@@ -2713,16 +2546,6 @@ export function useTerminal({ portfolioData, onSwitchToGUI, onTriggerMatrix, onD
         } else {
           addLine('GUI view is not available.', 'text-terminal-red');
         }
-        break;
-      case 'replicate':
-      case 'clone':
-      case 'fork':
-        showReplicate();
-        break;
-      case 'showcase':
-      case 'forks':
-      case 'adopters':
-        showShowcase();
         break;
       case 'clear':
         clearTerminal();
@@ -2816,9 +2639,6 @@ export function useTerminal({ portfolioData, onSwitchToGUI, onTriggerMatrix, onD
         }
         break;
       }
-      case 'stats':
-        showStats();
-        break;
       case 'open':
       case 'o':
       case 'g': {
@@ -2857,7 +2677,7 @@ export function useTerminal({ portfolioData, onSwitchToGUI, onTriggerMatrix, onD
         );
         setLastExitCode(127);
     }
-  }, [addLine, addNode, showHelp, openResumePdf, showWelcomeMessage, showAbout, showSkills, showExperience, showEducation, showProjects, showPersonalProjects, showContact, showPublications, showTimeline, showSearch, showTheme, showWhoAmI, listCommands, showCat, showNeofetch, showReplicate, showShowcase, showHistory, clearTerminal, showGenericSection, showQuote, showCoffee, showSudo, showMatrix, showRainbow, showKonami, showStats, showRmRf, linkRegistry, portfolioData, onSwitchToGUI, currentDir]);
+  }, [addLine, addNode, showHelp, openResumePdf, showWelcomeMessage, showAbout, showSkills, showExperience, showEducation, showProjects, showPersonalProjects, showContact, showPublications, showTimeline, showSearch, showTheme, showWhoAmI, listCommands, showCat, showNeofetch, showHistory, clearTerminal, showGenericSection, showQuote, showCoffee, showSudo, showMatrix, showRainbow, showKonami, showRmRf, linkRegistry, portfolioData, onSwitchToGUI, currentDir]);
 
   const navigateHistory = useCallback((direction: 'up' | 'down') => {
     if (commandHistory.length === 0) return currentInput;

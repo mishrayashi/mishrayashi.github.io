@@ -1,7 +1,7 @@
 # Auto-update PyPI download counts in `resume.yaml` at build time
 
 **Status:** Approved (2026-04-27)
-**Branch:** `subhayu99/inline-pypi-stats`
+**Branch:** `mishrayashi/inline-pypi-stats`
 **PR target:** `main`
 
 ## Goal

@@ -17,7 +17,7 @@
  *
  *   const cached = await tryLoadCache({
  *     localPath: OUT_FILE,
- *     remoteUrl: 'https://subhayu.in/data/pypi-stats.json',
+ *     remoteUrl: 'https://mishrayashi.github.io/data/pypi-stats.json',
  *     freshnessKey: 'fetched_at',
  *     maxAgeMs: 12 * 60 * 60 * 1000,
  *   });
