@@ -398,9 +398,9 @@ if (config.build.generatePdf || config.build.generateMarkdown) {
 
   console.log('🎨 Running rendercv to generate PDF and markdown...');
 
-  // Check if rendercv is installed
+  // Check if rendercv is installed (cross-platform: `where` on Windows, `which` elsewhere)
   try {
-    execSync('which rendercv', { stdio: 'pipe' });
+    execSync(process.platform === 'win32' ? 'where rendercv' : 'which rendercv', { stdio: 'pipe' });
   } catch (error) {
     console.error('❌ Error: rendercv not found! Please install it with: pip install rendercv');
     process.exit(1);
